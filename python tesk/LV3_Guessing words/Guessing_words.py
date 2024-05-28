@@ -112,21 +112,25 @@ while chance>0 and answer != submit:
     print(submit)#빈칸
     print(Alphabet)#알파벳/ 사용한 알파벳 제거
     a = input("단어를 입력해주세요 : ")
-    #사용한 알파벳 제거
-    for i, value in enumerate(Alphabet):
-        if a == value:
-            Alphabet[i]="_"
-    for i, value in enumerate(answer):
-        if value == a:
-            submit[i] = a
-            b = 1
-    if b == 1:
-        print("맞았습니다")
+    if not a.encode().isalpha():
+        print("영어를 입력하세요")
+    elif len(a)>1:
+        print("!!경고!! 한개의 알파벳만 입력하세요")
     else:
-        print("정답에 포함된 알파벳이 아닙니다. 기회가 차감됩니다.")
-        chance -= 1
-    print("")
-
+        # 사용한 알파벳 제거
+        for i, value in enumerate(Alphabet):
+            if a == value:
+                Alphabet[i] = "_"
+        for i, value in enumerate(answer):
+            if value == a:
+                submit[i] = a
+                b = 1
+        if b == 1:
+            print("맞았습니다")
+        else:
+            print("정답에 포함된 알파벳이 아닙니다. 기회가 차감됩니다.")
+            chance -= 1
+        print("")
 if answer == submit:
     print("정답입니다! ", submit)
 else:
