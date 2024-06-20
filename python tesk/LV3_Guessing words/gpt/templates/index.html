@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="vending-machine">
+        <h1>Hangman Game</h1>
+        <div id="game">
+            <p id="submit"></p>
+            <p>남은 기회: <span id="chances"></span></p>
+            <p>사용한 알파벳: <span id="used-alphabets"></span></p>
+            <input type="text" id="guess-input" maxlength="1">
+            <button id="guess-button">Guess</button>
+            <p id="message"></p>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
